@@ -1,4 +1,3 @@
-from typing import Union
 from fastapi import FastAPI
 from perplexity_api import Pyplapi as papi
 import models
