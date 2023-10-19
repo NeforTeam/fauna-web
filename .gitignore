@@ -1,23 +1,12 @@
 __pycache__/*
+apicache-py3/*
 temp.*
-python_tries/*
-
-backend/target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-
-### IntelliJ IDEA ###
-backend/.idea/modules.xml
-backend/.idea/jarRepositories.xml
-backend/.idea/compiler.xml
-backend/.idea/libraries/
-*.iws
-*.iml
-*.ipr
+.perplexity_session
+throttle.ctrl
 
 ### VS Code ###
 .vscode/
 
 ### Mac OS ###
 .DS_Store
+
