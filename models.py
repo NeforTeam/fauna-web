@@ -1,11 +1,13 @@
 from pydantic import BaseModel
-class AnimalShortModel:
-    def __init__(self, name: str, photo_link: str):
-        self.name = name
-        self.photo_link = photo_link
 
-class AnimalLongModel:
-    def __init__(self, name: str, photo_link: str, description: str):
-        self.name= name
-        self.photo_link= photo_link
-        self.description= description
+class ResponceModel:
+    def __init__(self, type: str, value: str):
+        self.type = type
+        self.value = value
+
+class Responce:
+    def __init__(self, models: list):
+        self.models=models
+
+class Request(BaseModel):
+    value: str

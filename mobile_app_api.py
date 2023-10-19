@@ -5,17 +5,20 @@ import models
 
 app = FastAPI()
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-@app.get("/get_animal_short")
-async def get_animal_model_short(object_name: str):
-    responce = await papi.get_description(object_name)
-    return responce
-
-
-@app.get("/get_animal_long")
-async def get_animal_model_long(object_name: str):
-    responce = await papi.get_description(object_name)  
-    return responce
+@app.get("/chat")
+async def get_animal_model_long(request: models.Request):
+    model_list = []
+    model_list.append(
+        models.ResponceModel(
+            type = "text",
+            value = await papi.get_chat_answer(request.value)
+            )
+        )
+    for photo_link in await papi.get_photos(request.value):
+        model_list.append(
+            models.ResponceModel(
+                type = "photo",
+                value = photo_link
+                )
+            )
+    return models.Responce(model_list)
